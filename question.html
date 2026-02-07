@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>For You ❤️</title>
+<meta charset="UTF-8">
+<title>For My Love ❤️</title>
+
 <style>
 body{
   margin:0;
@@ -9,46 +11,81 @@ body{
   display:flex;
   justify-content:center;
   align-items:center;
-  background:#ffe6f0;
-  font-family:Arial;
+  background:linear-gradient(135deg,#ff758c,#ff7eb3);
+  font-family:Arial, sans-serif;
+  overflow:hidden;
 }
+
 .box{
   background:white;
   padding:25px;
   border-radius:20px;
   text-align:center;
   width:320px;
+  box-shadow:0 15px 30px rgba(0,0,0,0.25);
+  animation: pop 1s ease;
 }
+
+@keyframes pop{
+  0%{transform:scale(0);}
+  100%{transform:scale(1);}
+}
+
+.gif{
+  width:150px;
+  margin-bottom:10px;
+}
+
 button{
-  margin:10px;
   padding:10px 20px;
   border:none;
   border-radius:20px;
   font-size:16px;
+  cursor:pointer;
 }
+
 .yes{
   background:#ff4d6d;
   color:white;
 }
+
 .no{
   background:#ccc;
+  position:absolute;
 }
 </style>
 </head>
+
 <body>
 
+<!-- 🎵 MUSIC -->
+<audio autoplay loop>
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+</audio>
+
 <div class="box">
-  <h3>Will you accept my Rose? 🌹</h3>
-  <button class="yes" onclick="yes()">Yes</button>
-  <button class="no" onclick="no()">No</button>
+  <!-- 💖 LOVE GIF -->
+  <img class="gif" src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif">
+
+  <!-- ✨ NAME HERE -->
+  <h3>Shraddha Madamji 💖</h3>
+  <p>Will you accept my Rose? 🌹</p>
+
+  <button class="yes" onclick="yes()">Yes 😍</button>
+  <button class="no" id="noBtn" onmouseover="moveNo()">No 🙈</button>
 </div>
 
 <script>
 function yes(){
-  alert("Happy Rose Day ❤️🌹");
+  alert("Happy Rose Day My Love 😘🌹");
 }
-function no(){
-  alert("No option चालत नाही 😄");
+
+function moveNo(){
+  let x = Math.random() * (window.innerWidth - 100);
+  let y = Math.random() * (window.innerHeight - 50);
+  let btn = document.getElementById("noBtn");
+  btn.style.left = x + "px";
+  btn.style.top = y + "px";
 }
 </script>
 
